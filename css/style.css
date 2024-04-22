@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+12+Charted&family=Jersey+10&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    border: none;
+}
+
+.heading {
+    font-family: "Jersey 10", sans-serif;
+    color: #ffffff;
+    font-size: 100px;
+    margin: 20px 0px 20px 0px;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000000;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+    background-color: #000000;
+    padding: 0px 50px 50px 50px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    background-color: #000000;
+    border-radius: 30px;
+    border: none;
+}
+
+.button1 {
+    background-color: #008000;
+    border-bottom-right-radius: 50%;
+    border-top-left-radius: 30px;
+}
+
+.button2 {
+    background-color: #ff0000;
+    border-bottom-left-radius: 50%;
+    border-top-right-radius: 30px;
+}
+
+.button3 {
+    background-color: #ffff00;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 30px;
+}
+
+.button4 {
+    background-color: #0000ff;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 30px;
+}
+
+.buttons>.btn {
+    width: 200px;
+    height: 200px;
+    opacity: 0.3;
+    transition: 0.5s ease-in;
+}
+
+.buttons>.btn:hover {
+    opacity: 1;
+    cursor: pointer;
+    transition: 0.5s ease-out;
+}
+
+.power-button {
+    color: #008000;
+    background-color: #000000;
+    width: 15.6vw;
+    text-align: center;
+}
+
+.power-button>.fa-power-off {
+    font-size: 50px;
+    transition: 1s ease-in;
+    opacity: 0.8;
+}
+
+.power-button>.fa-power-off:hover {
+    cursor: pointer;
+    transition: 1s ease-out;
+    color: #008000;
+    opacity: 1;
+}
+
+#refresh {
+    background-color: orange;
+    color: #000000;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 200px;
+    text-align: center;
+    padding: 10px;
+    margin-top: 40px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    transition: 1s ease-in;
+    visibility: hidden;
+}
+
+#refresh:hover {
+    background-color: rgb(228, 117, 12);
+    transition: 1s ease-out;
+}
