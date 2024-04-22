@@ -3,7 +3,6 @@ let playerClickedButtons = [];
 let gameLevel = 1;
 let result;
 let intervalId;
-let playerButtonClicksCounter = 0;
 
 // start the game when the power button clicked
 $('.fa-power-off').on('click', function () {
@@ -42,14 +41,9 @@ $('.fa-power-off').on('click', function () {
         if ((playerClickedButtons.length === machineClickedButtons.length)) {
             // check for equality
             result = (playerClickedButtons.toString() === machineClickedButtons.toString());
-            console.log(`result: ${result}`);
             // check the answer
             checkAnswer(result);
         }
-
-        ++playerButtonClicksCounter;
-
-        console.log(playerButtonClicksCounter);
     });
 });
 
@@ -57,7 +51,6 @@ function checkAnswer(result) {
     if (result) {
         ++gameLevel;
         $('.heading').text(`Level ${gameLevel}`);
-        playerButtonClicksCounter = 0;
         playerClickedButtons = [];
     } else {
         $('.heading').text(`🤣 You lost baby!!! 🤣`);
@@ -74,7 +67,6 @@ function checkAnswer(result) {
         });
         machineClickedButtons = [];
         playerClickedButtons = [];
-        playerButtonClicksCounter = 0;
     }
 }
 
