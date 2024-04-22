@@ -3,6 +3,7 @@ let playerClickedButtons = [];
 let gameLevel = 1;
 let result;
 let intervalId;
+let playerButtonClicksCounter = 0;
 
 // start the game when the power button clicked
 $('.fa-power-off').on('click', function () {
@@ -16,6 +17,7 @@ $('.fa-power-off').on('click', function () {
 
         // add the randomly clicked button to an array
         machineClickedButtons.push(className);
+        playerButtonClicksCounter = 0;
 
         // apply transform and opacity on randomly clicked button
         $(className).css('transform', `scale(${1.2})`).css('opacity', 1);
@@ -31,6 +33,7 @@ $('.fa-power-off').on('click', function () {
     }, 5000);
 
     $('.btn').on('click', function () {
+        ++playerButtonClicksCounter;
         let playerButtonClassName = `.${this.classList[1]}`;
         // push the clicked button in the array
         playerClickedButtons.push(playerButtonClassName);
@@ -39,12 +42,19 @@ $('.fa-power-off').on('click', function () {
 
         // if the length of buttons clicked by player and machine is the same
         if ((playerClickedButtons.length === machineClickedButtons.length)) {
-            // check for equality
-            result = (playerClickedButtons.toString() === machineClickedButtons.toString());
-            // check the answer
-            checkAnswer(result);
+            if (playerButtonClicksCounter === machineClickedButtons.length) {
+                // check for equality
+                result = (playerClickedButtons.toString() === machineClickedButtons.toString());
+                // check the answer
+                checkAnswer(result);
+            }
+        } else {
+            if (playerButtonClicksCounter > machineClickedButtons.length) {
+                checkAnswer(false);
+            }
         }
     });
+    
 });
 
 function checkAnswer(result) {
