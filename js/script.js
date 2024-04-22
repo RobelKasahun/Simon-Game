@@ -17,7 +17,6 @@ $('.fa-power-off').on('click', function () {
 
         // add the randomly clicked button to an array
         machineClickedButtons.push(className);
-        playerClickedButtons = [];
 
         // apply transform and opacity on randomly clicked button
         $(className).css('transform', `scale(${1.2})`).css('opacity', 1);
@@ -59,6 +58,7 @@ function checkAnswer(result) {
         ++gameLevel;
         $('.heading').text(`Level ${gameLevel}`);
         playerButtonClicksCounter = 0;
+        playerClickedButtons = [];
     } else {
         $('.heading').text(`🤣 You lost baby!!! 🤣`);
         playSound('game-over-baby');
