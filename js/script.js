@@ -17,6 +17,7 @@ $('.fa-power-off').on('click', function () {
 
         // add the randomly clicked button to an array
         machineClickedButtons.push(className);
+        playerClickedButtons = [];
 
         // apply transform and opacity on randomly clicked button
         $(className).css('transform', `scale(${1.2})`).css('opacity', 1);
@@ -38,18 +39,18 @@ $('.fa-power-off').on('click', function () {
         // play sound when button clicked
         playSound(playerButtonClassName);
 
-        ++playerButtonClicksCounter;
-
         // if the length of buttons clicked by player and machine is the same
-        // playerClickedButtons.length === machineClickedButtons.length
         if ((playerClickedButtons.length === machineClickedButtons.length)) {
             // check for equality
             result = (playerClickedButtons.toString() === machineClickedButtons.toString());
+            console.log(`result: ${result}`);
             // check the answer
             checkAnswer(result);
-        } else {
-            // checkAnswer(false);
         }
+
+        ++playerButtonClicksCounter;
+
+        console.log(playerButtonClicksCounter);
     });
 });
 
@@ -57,7 +58,6 @@ function checkAnswer(result) {
     if (result) {
         ++gameLevel;
         $('.heading').text(`Level ${gameLevel}`);
-        playerClickedButtons = [];
         playerButtonClicksCounter = 0;
     } else {
         $('.heading').text(`🤣 You lost baby!!! 🤣`);
