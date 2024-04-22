@@ -1,14 +1,3 @@
-/**
- * - Broaden your job search
- *      - IT support or QA
-
- * - Beefing up your resume
- *      - Open Source Project
- *      - Personal Projects
-
- * - Back into Education
- *      - Masters in Computer Science
- */
 let machineClickedButtons = [];
 let playerClickedButtons = [];
 let gameLevel = 1;
